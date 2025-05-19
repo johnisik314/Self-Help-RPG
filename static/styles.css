@@ -1,0 +1,155 @@
+
+body {
+    font-family: 'Merriweather', serif; /* Or your preferred font */
+    background-color: #f5f0e1; /* Current parchment color */
+    background-image: url('data:image/png;base64,...'); /* Subtle paper texture */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+font-family: 'Playfair Display', serif; /* More decorative serif for headings /
+color: #543d28; / Deep brown */
+text-align: center;
+margin-bottom: 25px;
+line-height: 1.2;
+}
+
+p {
+font-family: 'Open Sans', sans-serif; /* Clean sans-serif for body text /
+color: #63513e; / Medium brown */
+text-align: center;
+margin-bottom: 15px;
+line-height: 1.6;
+}
+
+a {
+color: #b8860b; /* Goldenrod */
+text-decoration: none;
+font-weight: bold;
+transition: color 0.3s ease;
+}
+
+a:hover {
+color: #daa520; /* Darker goldenrod */
+text-decoration: underline;
+}
+
+form {
+background-color: #f8f4e7; /* Slightly lighter parchment for forms /
+padding: 30px;
+border-radius: 10px;
+box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+border: 1px solid #e0d8c0; / Subtle border /
+width: 90%; / Make form responsive /
+max-width: 400px; / Limit maximum width on larger screens */
+margin-bottom: 30px;
+box-sizing: border-box;
+}
+
+form div {
+margin-bottom: 20px;
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+color: #543d28;
+font-weight: bold;
+}
+
+input,
+button {
+font-family: 'Open Sans', sans-serif;
+font-size: 16px;
+padding: 10px;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+input {
+width: 100%;
+border: 1px solid #ccc;
+background-color: #fff;
+}
+
+input:focus {
+outline: none;
+border-color: #b8860b;
+box-shadow: 0 0 5px rgba(184, 134, 11, 0.5);
+}
+
+button {
+display: block;
+width: 100%;
+background-color: #8b4513; /* Saddle brown */
+color: white;
+border: none;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+button:hover {
+background-color: #a0522d; /* Sienna */
+}
+
+.error {
+color: #cc0000; /* Red */
+text-align: center;
+margin-bottom: 15px;
+}
+
+/* Responsive Design using Media Queries */
+@media (max-width: 768px) {
+body {
+padding: 15px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 18px;
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 12px;
+}
+
+form {
+    padding: 20px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+input,
+button {
+    font-size: 1.1em;
+    padding: 12px;
+}
+}
+
+@media (max-width: 480px) {
+h1 {
+font-size: 2em;
+}
+
+h2 {
+    font-size: 1.7em;
+}
+
+p {
+    font-size: 0.95em;
+}
+}

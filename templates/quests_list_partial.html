@@ -1,0 +1,44 @@
+<h2>Your Current Quests</h2>
+<div id="active-quests-area">
+    {% if quests %}
+    <ul>
+        {% for quest in quests %}
+        <li style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <strong>{{ quest['Quest Name'] }}</strong><br>
+                Description: {{ quest['Description'] }}<br>
+                Rewards: Gold: {{ quest['Gold Reward'] }}, XP: {{ quest['XP Reward'] }}
+            </div>
+            <div>
+                <button class="complete-quest-btn" data-quest-id="{{ quest['Quest ID'] }}">Completed</button>
+                <button class="delete-quest-btn" data-quest-id="{{ quest['Quest ID'] }}">X</button>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No active quests.</p>
+    {% endif %}
+</div>
+
+<div id="new-quests-area" style="display: none; border: 1px solid #ccc; padding: 15px; margin-top: 10px;">
+    <h3>Choose a New Quest:</h3>
+    <div id="new-quests-list">
+        {% if new_quests %}
+            <ul>
+            {% for quest in new_quests %}
+                <li style="display: flex; justify-content: space-between; align-items: center; line-height: 1.5;">
+                    <span>{{ quest['Quest Description'] }}<br>Rewards: Gold: {{ quest['Gold Reward'] }}, XP: {{ quest['XP Reward'] }}</span>
+                    <button onclick="fetch('/accept_quest/{{ quest['Quest ID'] }}').then(response => response.text()).then(data => { fetch('/quests_data').then(response => response.text()).then(data => { document.getElementById('content-area').innerHTML = data; }); });" style="margin-left: 10px;">Accept</button>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>Could not fetch new quests.</p>
+        {% endif %}
+    </div>
+</div>
+
+<div style="margin-top: 10px;">
+    <button onclick="fetch('/new_quests').then(response => response.text()).then(data => { document.getElementById('new-quests-area').innerHTML = data; document.getElementById('new-quests-area').style.display = 'block'; });">New Quest</button>
+</div>

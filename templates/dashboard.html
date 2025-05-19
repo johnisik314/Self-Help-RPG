@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixel RPG - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+            .button-container {
+            display: flex;
+            justify-content: space-around; /* Distribute buttons evenly */
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            padding: 10px 15px;
+            font-size: 16px;
+            /* Add any other button styles you like */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pixel RPG</h1>
+
+        <div id="content-area">
+            <h2>Your Profile</h2>
+            <p>User ID: {{ user.user_id }}</p>
+            <p>Username: {{ user.username }}</p>
+            <p>Level: {{ user.level }}</p>
+            <p>Experience: {{ user.experience }}</p>
+            <p>Currency: {{ user.currency }}</p>
+        </div>
+
+        <div class="button-container">
+            <button id="profile-btn">Profile</button>
+            <button id="quests-btn">Quests</button>
+            <button id="bingo-btn" disabled>Bingo</button>
+            <button id="list-btn" disabled>List</button>
+            <button id="settings-btn" disabled>Settings</button>
+        </div>
+
+        <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>

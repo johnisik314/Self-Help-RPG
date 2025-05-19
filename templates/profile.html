@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>User Profile</h2>
+    <p>User ID: {{ user.id }}</p>
+    <p>Username: {{ user.username }}</p>
+    <p>Level: {{ user.level }}</p>
+    <p>Experience: {{ user.experience }}</p>
+    <p>Currency: {{ user.currency }}</p>
+</body>
+</html>

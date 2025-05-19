@@ -1,0 +1,5 @@
+streamlit run /Users/johnisik/Desktop/pixel_rpg_backend/frontend.py
+
+cd /Users/johnisik/Desktop/pixel_rpg_backend
+source venv/bin/activate  # Activate your virtual environment
+python app.py

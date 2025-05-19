@@ -1,0 +1,15 @@
+<h3>Choose a New Quest:</h3>
+{% if new_quests %}
+    <div id="new-quests-list">
+        <ul>
+        {% for quest in new_quests %}
+            <li style="display: flex; justify-content: space-between; align-items: center; line-height: 1.5;">
+                <span>{{ quest['Quest Description'] }}<br>Rewards: Gold: {{ quest['Gold Reward'] }}, XP: {{ quest['XP Reward'] }}</span>
+                <button onclick="fetch('/accept_quest/{{ quest['Quest ID'] }}').then(response => response.text()).then(data => { const questsButton = document.getElementById('quests-btn'); if (questsButton) { questsButton.click(); } });" style="margin-left: 10px;">Accept</button>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% else %}
+    <p>Could not fetch new quests.</p>
+{% endif %}

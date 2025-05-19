@@ -1,0 +1,14 @@
+<div>
+    <h3>Choose Your New Quest</h3>
+    <div id="new-quests-list">
+        {% for quest in new_quests %}
+        <div style="margin-bottom: 15px; border: 1px solid #ccc; padding: 10px;">
+            <p><strong>{{ quest['Quest Name'] }}</strong></p>
+            <p>{{ quest['Description'] }}</p>
+            <p>Rewards: Gold: {{ quest['Gold Reward'] }}, XP: {{ quest['XP Reward'] }}</p>
+            <button class="accept-quest-btn" data-quest-id="{{ quest['Quest ID'] }}">Accept</button>
+        </div>
+        {% endfor %}
+        <button id="re-roll-quests-btn">Re-roll Quests</button>
+    </div>
+</div>
